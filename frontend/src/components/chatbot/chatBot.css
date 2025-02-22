@@ -1,7 +1,7 @@
 .chatbot {
     width: 100px;
     height: 100px;
-    background-color: blue;
+    background-color: rgb(245, 161, 229);
     border-radius: 50%;
     position: fixed;
     bottom: 20px;

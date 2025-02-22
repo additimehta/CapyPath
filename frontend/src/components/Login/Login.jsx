@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 import user_icon from "../../assets/person.png";
@@ -6,8 +7,13 @@ import email_icon from "../../assets/email.png";
 import password_icon from "../../assets/password.png";
 
 
-
 const Login = () => {
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate('/interest'); //change /dashboard to the path of desired nav
+  };
+
   return (
     <div className="container">
       <div className="header">
@@ -28,12 +34,12 @@ const Login = () => {
           <input type="password" placeholder="Password" />
         </div>
       </div>
-      <div className="forgot-password">Lost Password? <span>Click Here!</span></div>
-       <div className="submit-container">
+      <div className="forgot-password"><span>Forgot Password?</span><span>Click Here!</span></div>
+        <div className="submit-container">
         <div className="submit">Sign Up</div>
-        <div className="submit">Login</div>
-       </div>
 
+        <div className="submit" onClick={handleLoginClick}>Login</div>
+       </div>
     </div>
   );
 };
