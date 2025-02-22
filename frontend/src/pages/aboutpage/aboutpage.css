@@ -16,13 +16,18 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px; /* Space between GIFs */
-    padding: 20px;
+    padding: 40px 20px 20px 40px; /* Top: 40px, Right: 20px, Bottom: 20px, Left: 40px */
+    width: 100%; /* Ensure it takes full width */
+    margin: 0; /* Remove any default margin */
 }
 
 /* Individual GIF item */
 .gif-item {
     width: calc(50% - 20px); /* Two GIFs per row with gap */
     text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center-align items horizontally */
 }
 
 /* Style for the GIF images */
@@ -35,9 +40,11 @@ body {
 
 /* Style for the caption */
 .gif-item p {
-    margin-top: 10px;
+    margin-top: 10px; /* Space between image and text */
     font-size: 16px;
     color: white;
+    text-align: center; /* Center-align text */
+    width: 100%; /* Ensure text takes full width */
 }
 
 /* Optional: Add hover effect to GIFs */
