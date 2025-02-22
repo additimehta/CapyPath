@@ -42,34 +42,44 @@ const AIChat = () => {
   const handleSendMessage = async (text) => {
     if (!text.trim()) return;
 
-    // Add user message
     const userMessage = { text: text, isUser: true };
     setMessages((prev) => [...prev, userMessage]);
-
     setIsLoading(true);
 
     try {
-      // Generate response with system context
-      const prompt = `${SYSTEM_CONTEXT}\n\nUser: ${text}\nCapy:`;
-      const result = await model.generateContent(prompt);
-      const aiText = result.response.text();
+        // Initialize API inside the function
+        const genAI = new GoogleGenerativeAI(apiKey);
+        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
-      // Add AI message placeholder
-      const aiMessage = { text: "", isUser: false };
-      setMessages((prev) => [...prev, aiMessage]);
+        // Create a chat session
+        const chat = model.startChat({
+            history: [],
+            generationConfig: {
+                maxOutputTokens: 200,
+            },
+        });
 
-      // Type out response
-      typeResponse(aiText);
+        // Generate response
+        const result = await chat.sendMessage(text);
+        const aiText = result.response.candidates[0].content.parts[0].text;
+
+        // Add AI message placeholder
+        const aiMessage = { text: "", isUser: false };
+        setMessages((prev) => [...prev, aiMessage]);
+
+        // Type out response
+        typeResponse(aiText);
     } catch (error) {
-      console.error("Error:", error);
-      setMessages((prev) => [
-        ...prev,
-        { text: "Hmm, my siesta brain isn't working. Try again?", isUser: false },
-      ]);
+        console.error("Error:", error);
+        setMessages((prev) => [
+            ...prev,
+            { text: "Hmm, my siesta brain isn't working. Try again?", isUser: false },
+        ]);
     } finally {
-      setIsLoading(false);
+        setIsLoading(false);
     }
-  };
+};
+
 
   // Handle form submission
   const handleSubmit = (e) => {

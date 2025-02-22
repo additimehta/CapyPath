@@ -3,7 +3,7 @@ import Navbar from "./components/navbar/NavBar";
 import Chatbot from "./components/chatbot/chatBot";
 import './App.css';
 import Login from "./components/Login/Login";
-import Home from "./components/homepage/homepage"
+import Home from "./pages/homepage/homepage"
 
 const About = () => <h2 className="text-center mt-10">About Page</h2>;
 const Account = () => <h2 className="text-center mt-10">Account Page</h2>;
