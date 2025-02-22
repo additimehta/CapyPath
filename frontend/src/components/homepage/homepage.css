@@ -1,0 +1,12 @@
+.bg-cover {
+    background-image: url('../../assets/background.gif');
+    background-size: cover;        
+    background-position: center;   
+    background-repeat: no-repeat;  
+    height: 100vh;                 
+    margin: 0;      
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(64, 28, 97);
+}
