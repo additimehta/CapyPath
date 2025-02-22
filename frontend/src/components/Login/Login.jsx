@@ -17,29 +17,23 @@ const Login = () => {
   return (
     <div className="container">
       <div className="header">
-        <h2>Login</h2>
-        <div className="text"> Sign Up </div>
+        <div className="text"> Login </div>
         <div className="underline"></div>
       </div>
       <div className="inputs">
         <div className="input">
           <img src={user_icon} alt="User Icon" />
-          <input type="text" placeholder="Username" />
-        </div>
-        <div className="input">
-          <img src={email_icon} alt="Email Icon" />
-          <input type="email" placeholder="Email" />
+          <input type="text" placeholder="Username/Email" />
         </div>
         <div className="input">
           <img src={password_icon} alt="Password Icon" />
           <input type="password" placeholder="Password" />
         </div>
       </div>
-      <div className="forgot-password"><span>Forgot Password?</span><span>Click Here!</span></div>
+      <div className="forgot-password"><span>Forgot Password?</span></div>
         <div className="submit-container">
-        <div className="submit">Sign Up</div>
 
-        <div className="submit" onClick={handleLoginClick}>Login</div>
+        <div className="submit" onClick={handleLoginClick}>Submit</div>
        </div>
     </div>
   );

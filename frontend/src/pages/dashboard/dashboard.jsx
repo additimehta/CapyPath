@@ -31,13 +31,6 @@ function Dashboard({ onLogout }) {
         <img src={card4} className="dashboard-image" />
         <img src={card5} className="dashboard-image" />
       </div>
-      <div className="button-container">
-        <button onClick={() => scrollToCard(0)}>Card 1</button>
-        <button onClick={() => scrollToCard(1)}>Card 2</button>
-        <button onClick={() => scrollToCard(2)}>Card 3</button>
-        <button onClick={() => scrollToCard(3)}>Card 4</button>
-        <button onClick={() => scrollToCard(4)}>Card 5</button>
-    </div>
     <button onClick={handleLogoutClick}>Logout</button>
   </div> 
   );
