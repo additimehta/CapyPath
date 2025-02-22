@@ -11,6 +11,7 @@ import Login from "./components/Login/Login";
 import Home from "./pages/homepage/homepage";
 import Account from "./pages/accountpage/accountpage";
 import About from "./pages/aboutpage/aboutpage";
+import Dashboard from "./pages/dashboard/dashboard";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       <Chatbot/>
     </Router>
