@@ -79,7 +79,7 @@ export default function Form() {
       <h2>Find Your Career Pathway</h2>
       <form>
         {/* Hardcoded University Dropdown */}
-        <label>Choose a University:</label>
+        <label style={{ color: "white" }}>Choose a University:</label>
         <select
           value={selectedUniversity}
           onChange={(e) => {
