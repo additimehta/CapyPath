@@ -1,0 +1,17 @@
+.scrollable-dropdown {
+    max-height: 120px; /* Adjust height to fit ~5 items */
+    overflow-y: auto; /* Enables scrolling */
+    width: 100%; /* Ensures dropdown is properly sized */
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .result-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
