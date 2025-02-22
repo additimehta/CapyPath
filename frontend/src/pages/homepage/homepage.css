@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
 .bg-cover {
     background-image: url('../../assets/background.gif'); /* Relative path */
     background-size: cover;
@@ -8,4 +10,23 @@
 
   html {
     scroll-behavior: smooth;
+  }
+
+  * {
+    font-family: 'Pixelify Sans', italic;
+    color:#ffff;
+  }
+
+  .start-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color:blueviolet;
+    opacity: 0.8;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .start-button:hover {
+    background-color:rgb(87, 37, 133);
+    color: #ffff;
   }

@@ -14,7 +14,7 @@
   }
   
   .navbar h1 {
-    font-size: 24px;
+    font-size: 60px;
     font-weight: bold;
   }
   
@@ -28,6 +28,7 @@
   
   .navbar ul li {
     display: inline;
+    font-size: 40px;
   }
   
   .navbar ul li a {
@@ -38,4 +39,6 @@
   
   .navbar ul li a:hover {
     text-decoration: underline;
+    margin: 0 15px;
+    font-size: 2em;
   }

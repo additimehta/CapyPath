@@ -1,5 +1,15 @@
 body {
   padding-top: 80px;
+  background-color:rgb(36, 15, 58);
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  padding: 20px;
 }
 
 .home-title {
@@ -11,5 +21,5 @@ body {
     border-radius: 30px;
     left: 325px;
     color: #ffffff;
-    font-family: 'pixelify sans', serif;
+    font-family: 'Pixelify sans', serif;
 }

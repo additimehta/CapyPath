@@ -18,6 +18,7 @@ function App() {
   return (
     <Router>
       <Navbar />
+      <div className="content-container">
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -26,6 +27,7 @@ function App() {
         <Route path="/account" element={<Account />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
+      </div>
       <Chatbot/>
     </Router>
   );
