@@ -44,7 +44,7 @@ export default function Form() {
       }
 
       let { data: fetchedData, error: fetchError } = await supabase
-        .from("cards") // Change this to your actual table name
+        .from("Cards") // Change this to your actual table name
         .select("uni, degree, job_opportunities, interesting_facts")
         .eq("uni", university)
         .eq("degree", selectedDegree)
