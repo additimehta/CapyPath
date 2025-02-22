@@ -9,8 +9,8 @@ import Chatbot from "./components/chatbot/chatBot";
 /*pages*/
 import Login from "./components/Login/Login";
 import Home from "./pages/homepage/homepage";
-import { Account } from "./pages/accountpage/accountpage";
-import { About } from "./pages/aboutpage/aboutpage";
+import Account from "./pages/accountpage/accountpage";
+import About from "./pages/aboutpage/aboutpage";
 
 
 function App() {
