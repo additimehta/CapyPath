@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { supabase } from "./superbase";
-import './form.css';
+import "./form.css";
 
 export default function Form() {
   // Hardcoded list of Ontario universities
@@ -31,6 +31,7 @@ export default function Form() {
   const [degrees, setDegrees] = useState([]); // List of degrees for selected uni
   const [selectedDegree, setSelectedDegree] = useState(""); // Selected degree
   const [data, setData] = useState(null);
+  const [formStep, setFormStep] = useState("university"); // Track form progress
 
   // Fetch degrees from Supabase based on selected university
   useEffect(() => {
@@ -74,34 +75,53 @@ export default function Form() {
     fetchData();
   }, [selectedDegree]);
 
+  // Handle form submission
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent page refresh
+
+    if (formStep === "university") {
+      // Move to the next step (degree selection)
+      setFormStep("degree");
+    } else if (formStep === "degree") {
+      // Process the final submission (e.g., display results)
+      console.log("Selected University:", selectedUniversity);
+      console.log("Selected Degree:", selectedDegree);
+      // You can add additional logic here, such as sending data to an API
+    }
+  };
+
   return (
     <div>
       <h2>Find Your Career Pathway</h2>
-      <form>
-        {/* Hardcoded University Dropdown */}
-        <label style={{ color: "white" }}>Choose a University:</label>
-        <select
-          value={selectedUniversity}
-          onChange={(e) => {
-            setSelectedUniversity(e.target.value);
-            setSelectedDegree(""); // Reset degree when university changes
-          }}
-        >
-          <option value="">Select a university</option>
-          {universities.map((uni, index) => (
-            <option key={index} value={uni}>
-              {uni}
-            </option>
-          ))}
-        </select>
-
-        {/* Degree Dropdown (Only appears if a university is selected) */}
-        {degrees.length > 0 && (
+      <form onSubmit={handleSubmit}>
+        {/* University Dropdown (Only shown in the first step) */}
+        {formStep === "university" && (
           <>
-            <label>Choose a Degree:</label>
+            <label style={{ color: "white" }}>Choose a University:</label>
+            <select
+              value={selectedUniversity}
+              onChange={(e) => setSelectedUniversity(e.target.value)}
+              required
+            >
+              <option value="">Select a university</option>
+              {universities.map((uni, index) => (
+                <option key={index} value={uni}>
+                  {uni}
+                </option>
+              ))}
+            </select>
+            <button type="submit">Next</button>
+          </>
+        )}
+
+        {/* Degree Dropdown (Only shown in the second step) */}
+        {formStep === "degree" && (
+          <>
+            <label style={{ color: "white" }} >Choose a Degree:</label>
             <select
               value={selectedDegree}
               onChange={(e) => setSelectedDegree(e.target.value)}
+              required
             >
               <option value="">Select a degree</option>
               {degrees.map((deg, index) => (
@@ -110,6 +130,7 @@ export default function Form() {
                 </option>
               ))}
             </select>
+            <button type="submit">Submit</button>
           </>
         )}
       </form>
