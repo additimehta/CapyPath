@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./navbar/NavBar";
+import Chatbot from "./chatbot/chatBot";
 import './App.css'
 
 const Home = () => <h2 className="text-center mt-10">Home Page</h2>;
@@ -16,6 +17,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Chatbot/>
     </Router>
   );
 }
