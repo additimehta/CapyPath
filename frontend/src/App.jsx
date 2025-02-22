@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./navbar/NavBar";
-import Chatbot from "./chatbot/chatBot";
+import Navbar from "./components/navbar/NavBar";
+import Chatbot from "./components/chatbot/chatBot";
 import './App.css'
 
 const Home = () => <h2 className="text-center mt-10">Home Page</h2>;
