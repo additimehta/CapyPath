@@ -11,7 +11,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
-    navigate('/interest'); //change /dashboard to the path of desired nav
+    navigate('/dashboard'); //change /dashboard to the path of desired nav
   };
 
   return (
