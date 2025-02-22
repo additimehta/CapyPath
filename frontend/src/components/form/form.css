@@ -1,0 +1,18 @@
+.scrollable-dropdown {
+    max-height: 120px; /* Adjust to show 5 options */
+    overflow-y: auto; /* Enable scrolling */
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: black; /* Ensures text is black */
+    background-color: white; /* Keeps background white for contrast */
+  }
+  
+  /* Ensure labels and inputs have black text */
+  form label, 
+  form select, 
+  form input {
+    color: black;
+    font-size: 16px; /* Adjust as needed */
+  }
