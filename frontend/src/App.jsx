@@ -4,7 +4,6 @@ import './App.css';
 
 /*components*/
 import Navbar from "./components/navbar/NavBar";
-import Chatbot from "./components/chatbot/chatBot";
 
 /*pages*/
 import Login from "./components/Login/Login";
@@ -30,7 +29,6 @@ function App() {
         <Route path="/form" element={<Form />}/>
       </Routes>
       </div>
-      <Chatbot/>
     </Router>
   );
 }
