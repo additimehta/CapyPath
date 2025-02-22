@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 import user_icon from "../../assets/person.png";
-import email_icon from "../../assets/email.png";
 import password_icon from "../../assets/password.png";
 
 
