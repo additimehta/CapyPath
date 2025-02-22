@@ -1,5 +1,5 @@
 import './homepage.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import AboutPage from '../aboutpage/aboutpage';
 
 function Home() {
@@ -11,7 +11,7 @@ function Home() {
       </section>
 
       {/* About Us Section */}
-      <section id="about-us" className="about-us" style={{ height: '130vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <section id="about-us" className="about-us" style={{ height: '130vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#240f3a', width: '100%', margin: 0, padding: 0 }}>
         <AboutPage />
       </section>
     </div>

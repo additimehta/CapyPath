@@ -19,3 +19,18 @@ h1, p, button {
     left:-200px;
     top:-100px;
 }
+
+.image-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px 0;
+    gap: 5px;
+}
+
+.dashboard-image {
+    width: 30%;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 2px;
+}

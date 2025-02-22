@@ -15,8 +15,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Space between GIFs */
-    padding: 20px;
+    gap: 5px; /* Space between GIFs */
+    padding: 5px;
 }
 
 /* Individual GIF item */
@@ -38,6 +38,8 @@ body {
     margin-top: 10px;
     font-size: 16px;
     color: white;
+    padding-left: 410px;
+    padding-top: 70px;
 }
 
 /* Optional: Add hover effect to GIFs */
