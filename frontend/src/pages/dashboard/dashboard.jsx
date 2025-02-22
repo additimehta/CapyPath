@@ -14,7 +14,7 @@ function Dashboard({ onLogout }) {
   const [flippedCards, setFlippedCards] = useState([]); // Track flipped cards
 
   const handleLogoutClick = () => {
-    navigate('/dashboard'); // Change to your desired navigation path
+    navigate('/login'); // Change to your desired navigation path
   };
 
   const scrollToCard = (index) => {
@@ -36,7 +36,7 @@ function Dashboard({ onLogout }) {
   return (
     <div className="dashboard">
       <h1>Welcome to Your Dashboard</h1>
-      <p>You are logged in.</p>
+      <p>Let's gaze into your future!</p>
       
       <div className="cards-container">
         {[card1, card2, card3, card4].map((card, index) => (
@@ -59,13 +59,6 @@ function Dashboard({ onLogout }) {
               </div>
             </div>
           </div>
-        ))}
-      </div>
-      <div className="button-container">
-        {[0, 1, 2, 3, 4].map((index) => (
-          <button key={index} onClick={() => scrollToCard(index)}>
-            Card {index + 1}
-          </button>
         ))}
       </div>
       <button onClick={handleLogoutClick}>Logout</button>
