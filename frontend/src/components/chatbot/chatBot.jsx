@@ -13,13 +13,18 @@ const Chatbot = () => {
     script.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
     script.type="text/javascript";
     script.onload= () => {
+      console.log("Voiceflow script loaded");
       window.voiceflow.chat.load({
         verify: { projectID: '67b9593c0c1f7b1c4e81e332'},
+        url: 'https://general-runtime.voiceflow.com',
         versionID: 'production',
         voice: {
           url: "https://runtime-api.voiceflow.com"
         }
       });
+    };
+    script.onerror = () => {
+      console.error("Failed to load Voiceflow script");
     };
     document.body.appendChild(script);
   }, []);
@@ -36,6 +41,20 @@ const Chatbot = () => {
     };
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging.current) return;
+    setPosition({
+      x: e.clientX - offset.current.x,
+      y: e.clientY - offset.current.y,
+    });
+  }
+
+  const handleMouseUp = () => {
+    isDragging.current = false;
+    document.removeEventListener("mousemove", handleMouseMove);
+    document.removeEventListener("mouseup", handleMouseUp);
   };
 
   return (
