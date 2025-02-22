@@ -30,6 +30,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-image: url("C:\Users\brian\OneDrive\background.gif");
+
+  background-color:rgb(36, 15, 58);
 }
 
 h1 {
