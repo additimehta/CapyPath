@@ -1,24 +1,37 @@
-import { useEffect } from "react";
-import { useAuth } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import Dashboard from '../dashboard/dashboard'; // Import the Dashboard component
+import './accountpage.css';
 
-const AccountPage = () => {
-  const { user } = useAuth();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!user) {
-      navigate("/login"); 
-    }
-  }, [user, navigate]);
-
+function LoginAndSignup({ onLogin }) {
   return (
-    <div>
-      <h2>Welcome to Your Account Dashboard</h2>
-      <p>Manage your settings here.</p>
+    <div className="login-signup">
+      <h1>Login or Sign Up</h1>
+      <button onClick={onLogin}>Login</button>
+      <button onClick={onLogin}>Sign Up</button>
     </div>
   );
-};
+}
+
+function AccountPage() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
+  return (
+    <div className="account-page">
+      {isLoggedIn ? (
+        <Dashboard onLogout={handleLogout} />
+      ) : (
+        <LoginAndSignup onLogin={handleLogin} />
+      )}
+    </div>
+  );
+}
 
 export default AccountPage;
-
