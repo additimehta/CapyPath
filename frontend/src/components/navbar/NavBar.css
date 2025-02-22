@@ -3,7 +3,6 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: url("C:\Users\brian\OneDrive\background gif.gif");
     color: white;
     padding: 16px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -11,6 +10,7 @@
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+    background-color: transparent;
   }
   
   .navbar h1 {

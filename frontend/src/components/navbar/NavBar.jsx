@@ -1,16 +1,22 @@
 import { Link } from "react-router-dom";
-import './NavBar.css'
+import { useAuth } from "../../context/AuthContext";
 
 const Navbar = () => {
+  const { user, logout } = useAuth();
+
   return (
     <nav className="navbar">
-      <h1><a href="/">CapyPath</a></h1>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/login">Login </a></li>
-        <li><a href="/account">Account</a></li>
-      </ul>
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
+      
+      {user ? (
+        <>
+          <Link to="/account">Account</Link>
+          <button onClick={logout}>Logout</button>
+        </>
+      ) : (
+        <Link to="/login">Login</Link>
+      )}
     </nav>
   );
 };
