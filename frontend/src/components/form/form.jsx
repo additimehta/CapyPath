@@ -1,65 +1,39 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { supabase } from "./superbase";
 import "./form.css";
+import { universityDegrees } from "./data/universityData"; // Import the data
 
 export default function Form() {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   // Hardcoded list of Ontario universities
-  const universities = [
-    "University of Toronto",
-    "McMaster University",
-    "University of Waterloo",
-    "Western University",
-    "Queen's University",
-    "York University",
-    "Carleton University",
-    "University of Ottawa",
-    "Toronto Metropolitan University",
-    "University of Guelph",
-    "Trent University",
-    "Laurentian University",
-    "Wilfrid Laurier University",
-    "Brock University",
-    "Ontario Tech University",
-    "Nipissing University",
-    "Lakehead University",
-    "University of Windsor",
-    "Algoma University",
-    "University of Sudbury",
-  ];
+  const universities = Object.keys(universityDegrees); // Get university names from the object
 
   const [selectedUniversity, setSelectedUniversity] = useState(""); // Selected uni
   const [degrees, setDegrees] = useState([]); // List of degrees for selected uni
   const [selectedDegree, setSelectedDegree] = useState(""); // Selected degree
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(null); // Data for the selected degree
   const [formStep, setFormStep] = useState("university"); // Track form progress
 
-  // Fetch degrees from Supabase based on selected university
+  // Update degrees when university changes
   useEffect(() => {
-    async function fetchDegrees() {
-      if (!selectedUniversity) {
-        setDegrees([]);
-        return;
-      }
-
-      let { data, error } = await supabase
-        .from("Cards")
-        .select("degree")
-        .eq("uni", selectedUniversity);
-
-      if (data) {
-        setDegrees(data.map((entry) => entry.degree));
-      }
+    if (selectedUniversity) {
+      setDegrees(universityDegrees[selectedUniversity] || []);
+    } else {
+      setDegrees([]);
     }
-    fetchDegrees();
   }, [selectedUniversity]);
 
   // Fetch job opportunities & facts when degree is selected
   useEffect(() => {
     async function fetchData() {
       if (!selectedDegree) {
-        setData(null);
+        setData(null); // Reset data if no degree is selected
         return;
       }
+
+      console.log("Fetching data for degree:", selectedDegree);
 
       let { data, error } = await supabase
         .from("Cards")
@@ -68,8 +42,17 @@ export default function Form() {
         .eq("degree", selectedDegree)
         .single();
 
+      if (error) {
+        console.error("Error fetching data:", error);
+        return;
+      }
+
+      console.log("Fetched data:", data);
+
       if (data) {
-        setData(data);
+        setData(data); // Update data state with fetched results
+      } else {
+        console.log("No data found for this degree.");
       }
     }
     fetchData();
@@ -86,7 +69,9 @@ export default function Form() {
       // Process the final submission (e.g., display results)
       console.log("Selected University:", selectedUniversity);
       console.log("Selected Degree:", selectedDegree);
-      // You can add additional logic here, such as sending data to an API
+
+      // Navigate to the dashboard
+      navigate("/dashboard");
     }
   };
 
@@ -117,10 +102,13 @@ export default function Form() {
         {/* Degree Dropdown (Only shown in the second step) */}
         {formStep === "degree" && (
           <>
-            <label style={{ color: "white" }} >Choose a Degree:</label>
+            <label style={{ color: "white" }}>Choose a Degree:</label>
             <select
               value={selectedDegree}
-              onChange={(e) => setSelectedDegree(e.target.value)}
+              onChange={(e) => {
+                console.log("Selected Degree:", e.target.value); // Debugging log
+                setSelectedDegree(e.target.value);
+              }}
               required
             >
               <option value="">Select a degree</option>
