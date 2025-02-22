@@ -5,7 +5,7 @@ import './App.css';
 import Login from "./components/Login/Login";
 
 
-const Home = () => <h2 className="home-title">Home Page</h2>;
+const Home = () => <h2 className="home-title">Get Started</h2>;
 const About = () => <h2 className="text-center mt-10">About Page</h2>;
 const Account = () => <h2 className="text-center mt-10">Account Page</h2>;
 

@@ -14,7 +14,11 @@ body {
 .home-title {
     font-size: 3em;
     text-align: left;
-    align-self: flex-start;
-    margin-left:20px;
+    position: absolute;
+    top: 150px;
+    background-color: rgba(124, 0, 128, 0.438);
+    border-radius: 30px;
+    left: 325px;
     color: #ffffff;
+    font-family: '04b_03', monospace;
 }
