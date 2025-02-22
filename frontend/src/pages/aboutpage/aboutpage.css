@@ -1,0 +1,47 @@
+/* aboutpage.css */
+
+/* Set the background color */
+body {
+    background-color: #240f3a;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white; /* Set text color to white for better contrast */
+}
+
+/* Container for the GIFs */
+.gif-container {
+    background-color: #240f3a;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between GIFs */
+    padding: 20px;
+}
+
+/* Individual GIF item */
+.gif-item {
+    width: calc(50% - 20px); /* Two GIFs per row with gap */
+    text-align: center;
+}
+
+/* Style for the GIF images */
+.gif-item img {
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
+    height: auto;
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+/* Style for the caption */
+.gif-item p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: white;
+}
+
+/* Optional: Add hover effect to GIFs */
+.gif-item img:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    transition: transform 0.3s ease;
+}

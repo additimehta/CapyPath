@@ -1,4 +1,5 @@
 import './homepage.css';
+import AboutPage from '../aboutpage/aboutpage';
 
 function Home() {
   return (
@@ -10,7 +11,7 @@ function Home() {
 
       {/* About Us Section */}
       <section id="about-us" className="about-us" style={{ height: '130vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <h2>About Us</h2>
+        <AboutPage />
       </section>
     </div>
   );
