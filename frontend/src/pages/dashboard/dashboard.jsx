@@ -6,7 +6,7 @@ function Dashboard({ onLogout }) {
   const navigate = useNavigate();
 
   const handleLogoutClick = () => {
-    navigate('/login'); //change /dashboard to the path of desired nav
+    navigate('/dashboard'); //change /dashboard to the path of desired nav
   };
 
   return (
