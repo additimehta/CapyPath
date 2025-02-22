@@ -11,13 +11,13 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
-    navigate('/interest'); //change /dashboard to the path of desired nav
+    navigate('/dashboard'); //change /dashboard to the path of desired nav
   };
 
   return (
     <div className="container">
       <div className="header">
-        <h2>login</h2>
+        <h2>Login</h2>
         <div className="text"> Sign Up </div>
         <div className="underline"></div>
       </div>
