@@ -1,8 +1,17 @@
+html, body {
+    overflow: hidden; /* Prevents unwanted scrolling */
+}
+
 /* Dashboard Container */
 .dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centers vertically */
+    height: 100vh; /* Full viewport height */
     text-align: center;
-    padding: 20px;
-  }
+    overflow: hidden; /* Prevents scrolling */
+}
 
 .dashboard button {
     background-color: #9F3A91;
@@ -11,22 +20,19 @@
   /* Cards Container (Horizontal Scroll) */
   .cards-container {
     display: flex;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    gap: 60px; /* Space between cards */
-    padding: 20px 0;
-    scroll-snap-type: x mandatory; /* Snap cards into place */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-  }
-  
+    flex-wrap: wrap; /* Allows a 2x2 grid if needed */
+    justify-content: center;
+    gap: 20px;
+    overflow: hidden; /* Removes scrolling */
+}
+
   /* Flip Card Container */
   .flip-card {
-    perspective: 1000px;
-    width: 200px; /* Adjust based on your image size */
+    width: 200px;
     height: 300px;
-    flex: 0 0 auto; /* Prevent cards from shrinking */
-    scroll-snap-align: center; /* Snap cards to the center */
-    cursor: pointer;
-  }
+    flex: 0 0 auto; /* Ensures they don't shrink/grow unexpectedly */
+}
+
   
   /* Flip Card Inner Container */
   .flip-card-inner {
@@ -58,25 +64,35 @@
   }
   
   /* Front Face */
-  .flip-card-front {
-    background-image:   url('../../assets/card.png');
-    background-color: #fff;
-  }
-  
-  /* Back Face */
-  .flip-card-back {
-    background-color: #f8f9fa;
-    transform: rotateY(180deg);
-    padding: 20px;
-    text-align: center;
+  .flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden; /* Ensures images don't overflow */
+}
+
+.flip-card-back {
+    display: flex;
     flex-direction: column;
-  }
+    justify-content: center;
+    padding: 20px;
+    transform: rotateY(180deg);
+    height: 100%; /* Ensures it doesn't resize */
+}
+
+
   
   /* Image Styling */
   .dashboard-image {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 10px;
   }
   
