@@ -14,7 +14,7 @@ function NewDashboard({ onLogout }) {
   const [flippedCards, setFlippedCards] = useState([]); // Track flipped cards
 
   const handleLogoutClick = () => {
-    navigate('/login'); //change /dashboard to the path of desired nav
+    navigate('/login'); // Change /dashboard to the path of desired nav
   };
 
   const scrollToCard = (index) => {
@@ -37,8 +37,9 @@ function NewDashboard({ onLogout }) {
     navigate('/form');
   };
 
-  const handleCardClick = () => {
-    navigate('/form');
+  const handleMoreInfo = (e) => {
+    e.stopPropagation(); // Prevent flip on button click
+    navigate('/cardinfo');
   };
 
   return (
@@ -62,9 +63,7 @@ function NewDashboard({ onLogout }) {
               <div className="flip-card-back">
                 <h3>University of Waterloo</h3>
                 <p>Bachelor of Computer Science</p>
-                <button onClick={(e) => { e.stopPropagation(); console.log(`Card ${index + 1} action`); }}>
-                  More Info
-                </button>
+                <button onClick={handleMoreInfo}>More Info</button>
               </div>
             </div>
           </div>

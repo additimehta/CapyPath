@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import './CardInfo.css'; // Add CSS for typing animation
+import { useNavigate } from 'react-router-dom';
+import './CardInfo.css'; // Ensure this file is correctly linked
 
 function CardInfo() {
+  const navigate = useNavigate();
   const [typedText, setTypedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -27,16 +29,21 @@ function CardInfo() {
       const timeout = setTimeout(() => {
         setTypedText((prev) => prev + textToType[currentIndex]);
         setCurrentIndex((prev) => prev + 1);
-      }, 50); // Adjust typing speed (50ms per character)
+      }, 50); // Adjust typing speed
 
       return () => clearTimeout(timeout);
     }
-  }, [currentIndex, textToType]);
+  }, [currentIndex]);
 
   return (
     <div className="card-info">
       <h1>Card Information</h1>
       <pre className="typing-effect">{typedText}</pre>
+      
+      {/* Return Button */}
+      <button className="return-button" onClick={() => navigate('/dashboards')}>
+        Return to Dashboard
+      </button>
     </div>
   );
 }
