@@ -4,31 +4,10 @@ import { Link } from 'react-router-dom';
 import AboutPage from '../aboutpage/aboutpage';
 
 function Home() {
-  const [isPopupVisible, setIsPopupVisible] = useState(false);
-
-  const togglePopup = () => {
-    setIsPopupVisible(!isPopupVisible);
-  };
-
   return (
     <div className="bg-cover">
       {/* Homepage Content */}
       <section style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <img
-        src="../../assets/robot.png"
-        alt="robot icon"
-        className="robot-icon"
-        onClick={togglePopup}
-      />
-      {isPopupVisible && (
-        <div className="popup">
-          <img
-            src="../../assets/robot.png"
-            alt="uploaded"
-            className="popup-image"
-          />
-        </div>
-      )};
     </section>
 
     {/* About Us Section */}
