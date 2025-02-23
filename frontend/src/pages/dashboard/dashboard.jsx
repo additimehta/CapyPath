@@ -33,13 +33,18 @@ function Dashboard({ onLogout }) {
     });
   };
 
+  const handleForm = () => {
+    navigate('/form');
+  };
+
   return (
     <div className="dashboard">
       <h1>Welcome to Your Dashboard</h1>
       <p>Let's gaze into your future!</p>
       
+      <button onClick={handleForm}>Create</button>
       <div className="cards-container">
-        {[card1, card2, card3, card4].map((card, index) => (
+        {[card1, card2].map((card, index) => (
           <div
             key={index}
             ref={(el) => (cardRefs.current[index] = el)}
