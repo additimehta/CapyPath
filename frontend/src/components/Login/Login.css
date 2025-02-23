@@ -2,7 +2,7 @@ body {
     display: flex;            
     justify-content: center;  
     align-items: center;              
-    background-image: url('../../assets/loginb.gif'); /* Relative path */
+    background-image: url('../../assets/moreinfo.gif'); /* Relative path */
     background-size: cover;
     background-position: right center;
     background-repeat: no-repeat;
@@ -31,7 +31,7 @@ body {
     min-height: 500px;          
     box-sizing: border-box;
     opacity: 1;
-    transform: translate(-300px, -60px);
+    transform: translate(300px, -60px);
 }
 
 .header {
