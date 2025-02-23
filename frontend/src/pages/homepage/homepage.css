@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
 .bg-cover {
-    background-image: url('../../assets/background.gif'); /* Relative path */
+    background-image: url('../../assets/pg2.gif'); /* Relative path */
     background-size: cover;
     background-position: center;
     height: 100vh;
