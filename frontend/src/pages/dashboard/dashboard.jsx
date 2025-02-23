@@ -59,7 +59,7 @@ function Dashboard({ onLogout }) {
                 <h3>Card {index + 1} Details</h3>
                 <p>This is the back of card {index + 1}.</p>
                 <button onClick={(e) => { e.stopPropagation(); console.log(`Card ${index + 1} action`); }}>
-                  Action
+                  More info
                 </button>
               </div>
             </div>
