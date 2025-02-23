@@ -95,7 +95,7 @@ export default function Form() {
                 </option>
               ))}
             </select>
-            <button type="submit">Next</button>
+            <button type="submit" className="button">Next</button>
           </>
         )}
 
@@ -118,7 +118,7 @@ export default function Form() {
                 </option>
               ))}
             </select>
-            <button type="submit">Submit</button>
+            <button type="submit" className="button">Submit</button>
           </>
         )}
       </form>

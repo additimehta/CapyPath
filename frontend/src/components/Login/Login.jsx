@@ -14,6 +14,7 @@ const Login = () => {
   };
 
   return (
+    <div className="login-page">
     <div className="container">
       <div className="header">
         <div className="text"> Login </div>
@@ -34,6 +35,7 @@ const Login = () => {
 
         <div className="submit" onClick={handleLoginClick}>Submit</div>
        </div>
+    </div>
     </div>
   );
 };
