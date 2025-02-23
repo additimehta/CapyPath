@@ -14,7 +14,7 @@ function NewDashboard({ onLogout }) {
   const [flippedCards, setFlippedCards] = useState([]); // Track flipped cards
 
   const handleLogoutClick = () => {
-    navigate('/homepage'); //change /dashboard to the path of desired nav
+    navigate('/login'); //change /dashboard to the path of desired nav
   };
 
   const scrollToCard = (index) => {
@@ -60,10 +60,10 @@ function NewDashboard({ onLogout }) {
                 <img src={card} className="dashboard-image" alt={`Card ${index + 1}`} />
               </div>
               <div className="flip-card-back">
-                <h3>Card {index + 1} Details</h3>
-                <p>This is the back of card {index + 1}.</p>
+                <h3>University of Waterloo</h3>
+                <p>Bachelor of Computer Science</p>
                 <button onClick={(e) => { e.stopPropagation(); console.log(`Card ${index + 1} action`); }}>
-                  Action
+                  More Info
                 </button>
               </div>
             </div>
