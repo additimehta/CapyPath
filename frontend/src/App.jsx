@@ -12,6 +12,7 @@ import Account from "./pages/accountpage/accountpage";
 import About from "./pages/aboutpage/aboutpage";
 import Dashboard from "./pages/dashboard/dashboard";
 import Form from "./components/form/form";
+import NewDashboard from "./pages/newdashboard/newdashboard";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/account" element={<Account />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/form" element={<Form />}/>
+        <Route path="/dashboards" element={<NewDashboard />}/>
       </Routes>
       </div>
     </Router>

@@ -71,7 +71,7 @@ export default function Form() {
       console.log("Selected Degree:", selectedDegree);
 
       // Navigate to the dashboard
-      navigate("/dashboard");
+      navigate("/dashboards");
     }
   };
 
