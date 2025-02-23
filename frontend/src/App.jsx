@@ -13,6 +13,7 @@ import About from "./pages/aboutpage/aboutpage";
 import Dashboard from "./pages/dashboard/dashboard";
 import Form from "./components/form/form";
 import NewDashboard from "./pages/newdashboard/newdashboard";
+import CardInfo from "./pages/cardinfo/cardinfo";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/form" element={<Form />}/>
         <Route path="/dashboards" element={<NewDashboard />}/>
+        <Route path="/cardinfo" element={<CardInfo />} />
       </Routes>
       </div>
     </Router>
