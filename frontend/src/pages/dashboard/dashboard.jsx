@@ -14,7 +14,7 @@ function Dashboard({ onLogout }) {
   const [flippedCards, setFlippedCards] = useState([]); // Track flipped cards
 
   const handleLogoutClick = () => {
-    navigate('/login'); // Change to your desired navigation path
+    navigate('/homepage'); //change /dashboard to the path of desired nav
   };
 
   const scrollToCard = (index) => {
@@ -34,6 +34,10 @@ function Dashboard({ onLogout }) {
   };
 
   const handleForm = () => {
+    navigate('/form');
+  };
+
+  const handleCardClick = () => {
     navigate('/form');
   };
 
@@ -59,7 +63,7 @@ function Dashboard({ onLogout }) {
                 <h3>Card {index + 1} Details</h3>
                 <p>This is the back of card {index + 1}.</p>
                 <button onClick={(e) => { e.stopPropagation(); console.log(`Card ${index + 1} action`); }}>
-                  More info
+                  Action
                 </button>
               </div>
             </div>
