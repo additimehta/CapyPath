@@ -7,6 +7,7 @@ import card1 from "../../assets/card.png";
 import card2 from "../../assets/card.png";
 import card3 from "../../assets/card.png";
 import card4 from "../../assets/card.png";
+import voiceflow from "../../assets/voiceflow.gif";
 
 function NewDashboard({ onLogout }) {
   const navigate = useNavigate();
@@ -41,6 +42,7 @@ function NewDashboard({ onLogout }) {
     e.stopPropagation(); // Prevent flip on button click
     navigate('/cardinfo');
   };
+  
 
   return (
     <div className="dashboard">
@@ -48,6 +50,14 @@ function NewDashboard({ onLogout }) {
       <p>Let's gaze into your future!</p>
       
       <button onClick={handleForm}>Create</button>
+      <div className="horizontal-container">
+      <img
+          src={voiceflow}
+          alt="Voiceflow"
+          className="voiceflow-icon"
+        />
+      </div>
+      
       <div className="cards-container">
         {[card1].map((card, index) => (
           <div

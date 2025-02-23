@@ -11,6 +11,11 @@ html, body {
     height: 100vh; /* Full viewport height */
     text-align: center;
     overflow-x: hidden; /* Prevents scrolling */
+    background-image: url('../../assets/witch.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 100vw;
   }
   
   .dashboard button {
@@ -93,9 +98,20 @@ html, body {
     height: 250px;
     background-color: #FFD700;
   }
+
+  .horizontal-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+  }
   
-  
-  
+  .voiceflow-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
     
     /* Image Styling */
     .dashboard-image {
