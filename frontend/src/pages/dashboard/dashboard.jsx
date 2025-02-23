@@ -13,11 +13,15 @@ function Dashboard({ onLogout }) {
   const cardRefs = useRef([]);
 
   const handleLogoutClick = () => {
-    navigate('/dashboard'); //change /dashboard to the path of desired nav
+    navigate('/homepage'); //change /dashboard to the path of desired nav
   };
 
   const scrollToCard = (index) => {
     cardRefs.current[index].scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleCardClick = () => {
+    navigate('/form');
   };
 
   return (
@@ -25,7 +29,7 @@ function Dashboard({ onLogout }) {
       <h1>Welcome to Your Dashboard</h1>
       <p>You are logged in.</p>
       <div className="image-container">
-        <img src={card1} className="dashboard-image" />
+        <img src={card1} className="dashboard-image" onClick={handleCardClick} />
         <img src={card2} className="dashboard-image" />
         <img src={card3} className="dashboard-image" />
         <img src={card4} className="dashboard-image" />

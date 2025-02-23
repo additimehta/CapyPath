@@ -5,7 +5,7 @@
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    color: black; /* Ensures text is black */
+    color: rgb(121, 55, 114); /* Ensures text is black */
     background-color: white; /* Keeps background white for contrast */
   }
   
@@ -13,6 +13,26 @@
   form label, 
   form select, 
   form input {
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 16px; /* Adjust as needed */
+  }
+
+  form select {
+    background-color: rgb(121, 55, 114); /* Keeps background white for contrast */
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  form select::after {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
   }
