@@ -14,7 +14,7 @@ function Dashboard({ onLogout }) {
   const [flippedCards, setFlippedCards] = useState([]); // Track flipped cards
 
   const handleLogoutClick = () => {
-    navigate('/homepage'); //change /dashboard to the path of desired nav
+    navigate('/login'); //change /dashboard to the path of desired nav
   };
 
   const scrollToCard = (index) => {
