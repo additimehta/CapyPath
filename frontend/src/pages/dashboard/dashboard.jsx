@@ -47,29 +47,7 @@ function Dashboard({ onLogout }) {
       <p>Let's gaze into your future!</p>
       
       <button onClick={handleForm}>Create</button>
-      <div className="cards-container">
-        {[card1, card2].map((card, index) => (
-          <div
-            key={index}
-            ref={(el) => (cardRefs.current[index] = el)}
-            className={`flip-card ${flippedCards[index] ? 'flipped' : ''}`}
-            onClick={() => handleCardFlip(index)}
-          >
-            <div className="flip-card-inner">
-              <div className="flip-card-front">
-                <img src={card} className="dashboard-image" alt={`Card ${index + 1}`} />
-              </div>
-              <div className="flip-card-back">
-                <h3>Card {index + 1} Details</h3>
-                <p>This is the back of card {index + 1}.</p>
-                <button onClick={(e) => { e.stopPropagation(); console.log(`Card ${index + 1} action`); }}>
-                  Action
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      
       <button onClick={handleLogoutClick}>Logout</button>
     </div>
   );
