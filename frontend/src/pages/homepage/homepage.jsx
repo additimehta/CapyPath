@@ -1,18 +1,39 @@
+import React, {useState} from 'react';
 import './homepage.css';
 import { Link } from 'react-router-dom';
 import AboutPage from '../aboutpage/aboutpage';
 
 function Home() {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
+
   return (
     <div className="bg-cover">
       {/* Homepage Content */}
       <section style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        
-      </section>
+        <img
+        src="../../assets/robot.png"
+        alt="robot icon"
+        className="robot-icon"
+        onClick={togglePopup}
+      />
+      {isPopupVisible && (
+        <div className="popup">
+          <img
+            src="../../assets/robot.png"
+            alt="uploaded"
+            className="popup-image"
+          />
+        </div>
+      )};
+    </section>
 
-      {/* About Us Section */}
-      <section id="about-us" className="about-us" style={{ height: '130vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#240f3a', width: '100%', margin: 0, padding: 0 }}>
-        <AboutPage />
+    {/* About Us Section */}
+    <section id="about-us" className="about-us" style={{ height: '130vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#240f3a', width: '100%', margin: 0, padding: 0 }}>
+      <AboutPage />
       </section>
     </div>
   );
