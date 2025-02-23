@@ -12,25 +12,29 @@ body {
 /* Container for the GIFs */
 .gif-container {
     background-color: #240f3a;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 40px; /* Space between items */
     justify-content: center;
-    gap: 5px; /* Space between GIFs */
-    padding: 5px;
+    align-items: center;
+    padding: 20px;
+    max-width: 800px; /* Prevents stretching */
+    margin: 0 auto; /* Centers the grid */
 }
 
 /* Individual GIF item */
 .gif-item {
-    width: calc(50% - 20px); /* Two GIFs per row with gap */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
     text-align: center;
 }
 
 /* Style for the GIF images */
 .gif-item img {
     width: 100%;
-    max-width: 300px; /* Adjust as needed */
+    max-width: 200px; /* Adjust size as needed */
     height: auto;
-    border-radius: 10px; /* Optional: Rounded corners */
 }
 
 /* Style for the caption */
@@ -38,8 +42,8 @@ body {
     margin-top: 10px;
     font-size: 16px;
     color: white;
-    padding-left: 410px;
-    padding-top: 70px;
+    text-align: center;
+    white-space: pre-line; /* Preserves new lines */
 }
 
 /* Optional: Add hover effect to GIFs */
