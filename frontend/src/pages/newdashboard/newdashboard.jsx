@@ -51,11 +51,13 @@ function NewDashboard({ onLogout }) {
       
       <button onClick={handleForm}>Create</button>
       <div className="horizontal-container">
-      <img
+      <a href="https://creator.voiceflow.com/project/67b9593c0c1f7b1c4e81e333/cms/workflow/66df755be937eb000784abb2" target="_blank" rel="noopener noreferrer">
+        <img
           src={voiceflow}
           alt="Voiceflow"
           className="voiceflow-icon"
         />
+      </a>
       </div>
       
       <div className="cards-container">
