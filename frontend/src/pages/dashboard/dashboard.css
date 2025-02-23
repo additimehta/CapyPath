@@ -1,5 +1,5 @@
 html, body {
-    overflow: hidden; /* Prevents unwanted scrolling */
+    overflow-x: hidden; /* Prevents unwanted scrolling */
 }
 
 /* Dashboard Container */
@@ -10,7 +10,7 @@ html, body {
     justify-content: center; /* Centers vertically */
     height: 100vh; /* Full viewport height */
     text-align: center;
-    overflow: hidden; /* Prevents scrolling */
+    overflow-x: hidden; /* Prevents scrolling */
 }
 
 .dashboard button {
